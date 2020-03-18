@@ -8,3 +8,6 @@ db_build.sql:
 
   db_build.js:
    to build database file
+
+    (npm init ===> package.json)
+    (  npm install cowsay ====> package-lock.json)

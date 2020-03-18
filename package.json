@@ -1,0 +1,25 @@
+{
+  "name": "blood-bank-api",
+  "version": "1.0.0",
+  "description": "https://hackmd.io/ACS3ZywERe652fLvmVNqEQ?view db_build.sql:  to build database (sql).",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nidaa-awawdeh/blood-bank-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nidaa-awawdeh/blood-bank-API/issues"
+  },
+  "homepage": "https://github.com/nidaa-awawdeh/blood-bank-API#readme",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  }
+}
