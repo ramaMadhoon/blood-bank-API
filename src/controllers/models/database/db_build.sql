@@ -1,5 +1,5 @@
 BEGIN;
- DROP TABLE IF EXISTS  patients,  donors, blood_bank
+ DROP TABLE IF EXISTS  Patients,  Donors, Blood bank
   CASCADE;
 
 CREATE TABLE Patients (
@@ -17,11 +17,12 @@ contact number INT ,
 );
 
 
-CREATE TABLE Blood bank (
+CREATE TABLE Blood_bank(
+donor_id INT,
 name VARCHAR (255) NOT NULL,
   city VARCHAR (255) NOT NULL,
   contact number INT  ,
-     FOREIGN KEY (donor_id)  REFERENCES donors(id)
+     FOREIGN KEY (donor_id)  REFERENCES Donors(id)
 );
 
 

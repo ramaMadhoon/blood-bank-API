@@ -1,6 +1,6 @@
 const connection = require('../database/db_connection');
 
-const sql = 'select * from blood_bank';
+const sql = "select * from Blood_bank";
 
 const BloodBank = (callback) => {
     connection.query(sql, (err, res) => {
