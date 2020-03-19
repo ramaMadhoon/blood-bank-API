@@ -1,17 +1,33 @@
 # blood-bank-API
-
 https://hackmd.io/ACS3ZywERe652fLvmVNqEQ?view
-db_build.sql:
+<hr>
+ <ol>
+ <p> this is package i need in this project </p>
+<li> npm install pg </li>
+<li> npm i</li>
+<li> npm run dev</li>
+</ol>
+<hr>
+<ol>
+ <h1> step to create database : </h1>
+ <li>create user  n1 with password '1';</li>
+ <li> /c ===> to connect database </li>
+ <li> grant all privileges on database namedatabase  to nameuser; </li>
+<li> Connecting to a database</li>
+<li>Connecting to a PostgreSQL server from a node server, including the setup of environment variables (heroku) </li> </ol>
+
+<ul>
+<li>db_build.sql:</li>
 to build database (sql).
 
-db_connection.js:
+<li>db_connection.js:</li>
 to build database connection.
 
-db_build.js:
-to build database file
+<li>db_build.js:</li>
+to build database file</ul>
 
-    (npm init ===> package.json)
-    (  npm install cowsay ====> package-lock.json)
+<p> (npm init ===> package.json)
+    (  npm install cowsay ====> package-lock.json) </p>
 
 <ul>
 <li> FOREIGN KEY (donor_id)  REFERENCES Donors(id) </li>
@@ -24,7 +40,7 @@ to build database file
 <li> npm i nodemon</li>
 <li>npm i pg </li>
 </ol>
-
+<hr>
  <h1>db_build.sql </h1>
  <ul>
 <li> db_build.sql in this file  bulid table</li>
@@ -40,6 +56,7 @@ to build database file
 <li>VARCHAR (255) NOT NULL </li>
  </p>
  </ul>
+ <hr>
  </br>
  <h1>db_connection.js file</h1>
  <ol>
@@ -56,6 +73,7 @@ Typically, opening a database connection is an expensive operation, especially i
 
 <li> ssl: !connectionString.includes('localhost'), ===>means  </li>
  </ol>
+ <hr>
   <ul> 
    <h1> db_build.js</h1> <br>
    <p>fs :File system <br>
@@ -66,3 +84,61 @@ Typically, opening a database connection is an expensive operation, especially i
 const path = require('path');
 const connection = require('./db_connection'); </li>
    </ul>
+   <hr>
+ <hr>
+ <ol>
+ <h1> <strong>Supertest:  </strong></h1>
+ <p>Supertest is an API testing library. Unlike tape, we don’t just test functions. We create fake requests and use them on our API to see if it works as expected. <p> <br>
+  <p>
+ Supertest is used in this workshop to simulate fake server requests without the need to have the server listening via a socket connection to respond to the requests. Fake requests are simply objects passed to your routes; </p>
+ <table>
+   <li>
+   <tr><td>  const http = require('http');</td></tr>
+   <tr><td>  const hostname = process.env.HOSTNAME || 'localhost';</td></tr>
+   <tr><td>  const port = process.env.PORT || 4000;</td></tr>
+   <tr><td>  http.createServer().listen(port, hostname, () => { <br>
+  console.log(`Server running at port http://${hostname}:${port}`)<br>
+});
+</td></tr>
+</li>
+ </table>
+ 
+  </ol>
+
+   <ul>
+   <h1> <strong> Test </strong> </h1>
+   <li>npm install tape supertest tap-spec --save-dev </li>
+    </ul>
+
+    <p>Befor do project review this link <br>
+https://github.com/ali-7/pg-workshop <br> 
+https://github.com/ali-7/db-testing-ws <br> </p>
+<ol>
+<h1>Task 1: Setting up the database:</h2>
+ <li>Connect to postgres, by typing psql or pgcli in the terminal.</li>
+  <table>
+   <li><tr><td>use these commands to create your database</td></tr>
+   <tr><td>CREATE DATABASE db_name;</td></tr>
+   <tr><td>CREATE USER user_name WITH SUPERUSER PASSWORD 'password';</td></tr>
+   <tr><td>ALTER DATABASE db_name OWNER TO user_name;</td></tr> </li>
+</table>
+<li>Add a config.env file and add the database's url in this format: DB_URL = postgres://[username]:[password]@localhost:5432/[database]. </li>
+</ol>
+<hr>
+
+<hr>
+<ol>
+<h1>Task 2: Getting data from the database</h1> 
+<li> Your job now is to add to database/config/connection.js and database/queries/getData.js and refactor your controllers/index.js so that the response data comes from the users table in your database instead of from static.js.</li>
+<li>In the terminal, connect to your database using pgcli postgres://[username]:[password]@localhost:5432/[database]. </li>
+<li>Create a table </li>
+<li> Inside database/queries/getData.js, write a SQL query that pulls the necessary data from your database</li>
+<li> Change the /users function in controllers/index.js to call the getData query.</li>
+</ol>
+ <ol>
+ <h1>Task 3: Adding data to the database </h1>
+ <li>Open up index.html and uncomment the form</li>
+ <li>Check that you can see an empty input box when you refresh your browser</li>
+ <li>Inside database/queries/postData.js, write a SQL query that insert the necessary data into your database.</li>
+ <li>Add a new endpoint to your router (/create-user) and find the way to handle it. </li>
+  </ol>
